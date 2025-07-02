@@ -1,0 +1,88 @@
+{
+  "HEADER": {
+    "SEARCH_ALL": "Tümü",
+    "SEARCH_MOVIES": "Filmler",
+    "SEARCH_CELEBRITIES": "Ünlüler",
+    "SEARCH_PLACEHOLDER": "Film, dizi, oyuncu ara",
+    "WATCHLIST": "İzleme Listesi",
+    "SIGN_IN": "Giriş Yap",
+    "SIGN_OUT": "Çıkış Yap",
+    "TOOLTIP_GO_TO_WATCHLIST": "İzleme Listene Git",
+    "TOOLTIP_SIGNUP_FOR_WATCHLIST": "İzleme Listeni Oluşturmak için Kaydol",
+    "SEARCH_LOADING": "Yükleniyor...",
+    "NO_RESULTS_FOUND": "Hiç sonuç bulunamadı."
+  },
+  "HOME": {
+    "SLIDER_TITLE": "Bu hafta IaMDb'deki En iyi 10",
+    "MOVIE_CARD_RATING": "Puan"
+  },
+  "LOGIN": {
+    "GO_BACK": "Anasayfaya Dön",
+    "SIGN_IN_TITLE": "Giriş Yap",
+    "EMAIL_LABEL": "E-posta",
+    "EMAIL_PLACEHOLDER": "E-postanızı girin",
+    "PASSWORD_LABEL": "Şifre",
+    "PASSWORD_PLACEHOLDER": "Şifrenizi girin",
+    "SIGN_IN_BUTTON": "Giriş Yap",
+    "DIVIDER_TEXT": "VEYA",
+    "GOOGLE_SIGN_IN": "Google ile Giriş Yap",
+    "NO_ACCOUNT_PROMPT": "Hesabınız yok mu?",
+    "SIGN_UP_LINK": "Kayıt ol"
+  },
+  "SIGNUP": {
+    "GO_BACK": "Anasayfaya Dön",
+    "CREATE_ACCOUNT_TITLE": "Hesap Oluştur",
+    "SUBTITLE": "Bize katılın! Başlamak için formu doldurun.",
+    "EMAIL_LABEL": "E-posta",
+    "EMAIL_PLACEHOLDER": "E-postanızı girin",
+    "PASSWORD_LABEL": "Şifre",
+    "PASSWORD_PLACEHOLDER": "Şifrenizi girin",
+    "CONFIRM_PASSWORD_LABEL": "Şifreyi Onayla",
+    "CONFIRM_PASSWORD_PLACEHOLDER": "Şifrenizi onaylayın",
+    "COUNTRY_LABEL": "Ülke",
+    "COUNTRY_PLACEHOLDER": "-- Bir Ülke Seçin --",
+    "CITY_LABEL": "Şehir",
+    "CITY_PLACEHOLDER": "-- Bir Şehir Seçin --",
+    "PHOTO_LABEL": "Profil Fotoğrafı (İsteğe bağlı)",
+    "CHOOSE_FILE_BUTTON": "Dosya Seç",
+    "NO_FILE_CHOSEN": "Dosya seçilmedi",
+    "SIGN_UP_BUTTON": "Kayıt Ol",
+    "ALREADY_HAVE_ACCOUNT": "Zaten bir hesabınız var mı?",
+    "SIGN_IN_LINK": "Giriş yap",
+    "ERRORS": {
+      "EMAIL_REQUIRED": "E-posta alanı zorunludur.",
+      "EMAIL_INVALID": "Lütfen geçerli bir e-posta adresi girin.",
+      "PASSWORD_REQUIRED": "Şifre alanı zorunludur.",
+      "PASSWORD_PATTERN": "Şifre en az 8 karakter, 1 rakam ve 1 özel karakter içermelidir.",
+      "CONFIRM_PASSWORD_REQUIRED": "Lütfen şifrenizi onaylayın.",
+      "PASSWORDS_MUST_MATCH": "Şifreler eşleşmiyor.",
+      "COUNTRY_REQUIRED": "Ülke seçimi zorunludur.",
+      "CITY_REQUIRED": "Şehir seçimi zorunludur."
+    }
+  },
+  "MOVIE_DETAIL": {
+    "ACTORS_LABEL": "Oyuncular:",
+    "TRAILER_TITLE": "Fragman",
+    "RATING_DETAILS_TITLE": "Puan Detayları",
+    "DISTRIBUTION_TITLE": "Ülkelere Göre Dağılım",
+    "COMMENTS_TITLE": "Yorumlar",
+    "COMMENT_FROM": "ülkesinden",
+    "LOADING_TEXT": "Film detayları yükleniyor...",
+    "ADD_TO_WATCHLIST": "İzleme listeme ekle",
+    "REMOVE_FROM_WATCHLIST": "İzleme listemde kaldır",
+    "RATING_BOX": {
+      "LABEL": "IaMDb PUANI",
+      "SUBTEXT": "Detaylar için tıklayın"
+    },
+    "POPULARITY_BOX": {
+      "LABEL": "POPÜLERLİK",
+      "SUBTEXT": "Popülerlik Puanı"
+    },
+    "BAR_CHART_TOOLTIP": "{{country}} ülkesinden {{count}} yorum"
+  },
+  "WATCHLIST": {
+    "TITLE": "İzleme Listem",
+    "EMPTY_MESSAGE": "İzleme listeniz boş. Filmlere göz atın",
+    "BROWSE_MOVIES": "Filmlere Göz Atın"
+  }
+}

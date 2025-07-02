@@ -1,0 +1,114 @@
+/* Genel sayfa konteyneri */
+.watchlist-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #efefef;
+}
+
+.watchlist-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #ffcc00;
+  display: inline-block;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.movie-card-wrapper {
+  flex: 0 0 200px;
+}
+
+.movie-card {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #333;
+  height: 100%;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 204, 0, 0.2);
+  z-index: 10;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.movie-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 20%, transparent);
+  transition: opacity 0.3s ease;
+}
+
+.movie-card-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-card-score {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #efefef;
+}
+
+.star-icon {
+  color: #ffcc00;
+  font-size: 1.1rem;
+}
+
+.info-section {
+  text-align: center;
+  padding: 5rem 1rem;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  color: #ccc;
+}
+
+.info-section p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.browse-button {
+  background-color: #ffcc00;
+  color: #121212;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+  display: inline-block;
+}
+
+.browse-button:hover {
+  background-color: #e6b800;
+  transform: scale(1.05);
+}

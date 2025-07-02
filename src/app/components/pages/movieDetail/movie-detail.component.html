@@ -1,0 +1,95 @@
+<app-header></app-header>
+<div class="detail-container" *ngIf="movie">
+  
+  <div class="movie-title-header">
+    <h1>{{ movie.title }}</h1>
+    <p class="description">{{ movie.description }}</p>
+  </div>
+  
+  <div class="main-content">
+    
+    <div class="left-column">
+      <div class="poster-container">
+        <img [src]="movie.posterUrl" [alt]="movie.title + ' Poster'">
+      </div>
+      
+      <div class="info-boxes">
+        <div class="info-box rating-box" (click)="toggleRatingDetails()">
+          <span class="label">{{ 'MOVIE_DETAIL.RATING_BOX.LABEL' | translate }}</span>
+          <div class="value">
+            <p>Star</p>
+            <span><strong>{{ movie.rating }}</strong> / 5</span>
+          </div>
+          <small>{{ 'MOVIE_DETAIL.RATING_BOX.SUBTEXT' | translate }}</small>
+        </div>
+
+        <div class="info-box popularity-box">
+          <span class="label">{{ 'MOVIE_DETAIL.POPULARITY_BOX.LABEL' | translate }}</span>
+          <div class="value">
+            <p>Trending</p>
+            <span><strong>#{{ popularityRank }}</strong> ({{ popularityScore }})</span>
+          </div>
+          <small>{{ 'MOVIE_DETAIL.POPULARITY_BOX.SUBTEXT' | translate }}</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <div class="trailer-section">
+        <h2>{{ 'MOVIE_DETAIL.TRAILER_TITLE' | translate }}</h2>
+        <div class="video-container" *ngIf="safeTrailerUrl">
+          <iframe [src]="safeTrailerUrl" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      
+      <div class="actions-section" *ngIf="isLoggedIn$ | async">
+        <button class="watchlist-btn" [class.in-watchlist]="isInWatchlist" (click)="toggleWatchlist()">
+          <span *ngIf="!isInWatchlist">
+            <i class="fas fa-plus-circle"></i> {{ 'MOVIE_DETAIL.ADD_TO_WATCHLIST' | translate }}
+          </span>
+          <span *ngIf="isInWatchlist">
+            <i class="fas fa-check-circle"></i> {{ 'MOVIE_DETAIL.REMOVE_FROM_WATCHLIST' | translate }}
+          </span>
+        </button>
+      </div>
+
+      <div class="actors">
+        <strong><span>{{ 'MOVIE_DETAIL.ACTORS_LABEL' | translate }}</span></strong> {{ movie.actors.join(', ') }}
+      </div>
+      
+      <div class="rating-details-section" *ngIf="showRatingDetails">
+        <hr>
+        <h2>{{ 'MOVIE_DETAIL.RATING_DETAILS_TITLE' | translate }}</h2>
+        <div class="details-content">
+          <div class="graph-section">
+            <h3>{{ 'MOVIE_DETAIL.DISTRIBUTION_TITLE' | translate }}</h3>
+            <div class="graph-container">
+              <div class="bar-wrapper" *ngFor="let item of ratingDistribution">
+                  <div class="bar" 
+                       [style.height]="item.percentage + '%'" 
+                       [title]="('MOVIE_DETAIL.BAR_CHART_TOOLTIP' | translate:{count: item.count, country: item.country}) + ' (' + (item.percentage | number:'1.0-1') + '%)'">
+                       <span class="bar-percentage">{{ item.percentage | number:'1.0-0' }}%</span>
+                  </div>
+                  <span class="country-label">{{ item.country }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="comments-section">
+            <h3>{{ 'MOVIE_DETAIL.COMMENTS_TITLE' | translate }}</h3>
+            <ul class="comment-list">
+              <li *ngFor="let comment of movie.comments" class="comment-card">
+                <strong class="comment-user">{{ comment.user }}</strong>
+                <span class="comment-country">{{ 'MOVIE_DETAIL.COMMENT_FROM' | translate }} {{ comment.country }}</span>
+                <p class="comment-text">"{{ comment.text }}"</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="loading-container" *ngIf="!movie">
+  <p>{{ 'MOVIE_DETAIL.LOADING_TEXT' | translate }}</p>
+</div>

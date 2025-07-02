@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="main">
+    <div class="movie-slider">
+        <h2>{{ 'HOME.SLIDER_TITLE' | translate }}</h2>
+        <div *ngIf="isLoading" class="loading-indicator">
+            <p>{{ 'HOME.LOADING' | translate }}...</p>
+        </div>
+        <div *ngIf="errorMessage" class="error-indicator">
+            <p>{{ errorMessage }}</p>
+        </div>
+        <div *ngIf="!isLoading && !errorMessage" class="slider-content">
+            <ng-container *ngIf="movies$ | async as movies">
+                <div *ngIf="movies.length === 0" class="no-movies">
+                    <p>{{ 'HOME.NO_MOVIES_FOUND' | translate }}</p>
+                </div>
+                <div class="movie-card-wrapper" *ngFor="let movie of movies">
+                    <div class="movie-card" (click)="goToMovieDetail(movie.id)">
+                        <img [src]="movie.posterUrl" alt="{{movie.title}} poster">
+                        <div class="movie-card-overlay">
+                            <h3 class="movie-card-title">{{ movie.title }}</h3>
+                            <div class="movie-card-score">{{ 'HOME.MOVIE_CARD_RATING' | translate }}: {{ movie.rating }} / 5</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+<div class="signup-container">
+  <div class="go-back" (click)="goToHome()">{{ 'SIGNUP.GO_BACK' | translate }}</div>
+  <div class="signup-card">
+    <h2>{{ 'SIGNUP.CREATE_ACCOUNT_TITLE' | translate }}</h2>
+    <p class="signup-subtitle">{{ 'SIGNUP.SUBTITLE' | translate }}</p>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" novalidate>
+
+      <div class="form-group">
+        <label for="email">{{ 'SIGNUP.EMAIL_LABEL' | translate }}</label>
+        <input type="email" id="email" formControlName="email" [placeholder]="'SIGNUP.EMAIL_PLACEHOLDER' | translate">
+        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error-message">
+          <small *ngIf="email?.errors?.['required']">{{ 'SIGNUP.ERRORS.EMAIL_REQUIRED' | translate }}</small>
+          <small *ngIf="email?.errors?.['email']">{{ 'SIGNUP.ERRORS.EMAIL_INVALID' | translate }}</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">{{ 'SIGNUP.PASSWORD_LABEL' | translate }}</label>
+        <input type="password" id="password" formControlName="password" [placeholder]="'SIGNUP.PASSWORD_PLACEHOLDER' | translate">
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error-message">
+          <small *ngIf="password?.errors?.['required']">{{ 'SIGNUP.ERRORS.PASSWORD_REQUIRED' | translate }}</small>
+          <small *ngIf="password?.errors?.['pattern']">{{ 'SIGNUP.ERRORS.PASSWORD_PATTERN' | translate }}</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">{{ 'SIGNUP.CONFIRM_PASSWORD_LABEL' | translate }}</label>
+        <input type="password" id="confirmPassword" formControlName="confirmPassword" [placeholder]="'SIGNUP.CONFIRM_PASSWORD_PLACEHOLDER' | translate">
+        <div *ngIf="confirmPassword?.invalid && (confirmPassword?.dirty || confirmPassword?.touched)" class="error-message">
+            <small *ngIf="confirmPassword?.errors?.['required']">{{ 'SIGNUP.ERRORS.CONFIRM_PASSWORD_REQUIRED' | translate }}</small>
+            <small *ngIf="confirmPassword?.errors?.['mustMatch']">{{ 'SIGNUP.ERRORS.PASSWORDS_MUST_MATCH' | translate }}</small>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="country">{{ 'SIGNUP.COUNTRY_LABEL' | translate }}</label>
+          <select id="country" formControlName="country">
+            <option value="" disabled>{{ 'SIGNUP.COUNTRY_PLACEHOLDER' | translate }}</option>
+            <option *ngFor="let country of countries" [value]="country">
+              {{ country }}
+            </option>
+          </select>
+          <div *ngIf="country?.invalid && (country?.dirty || country?.touched)" class="error-message">
+              <small *ngIf="country?.errors?.['required']">{{ 'SIGNUP.ERRORS.COUNTRY_REQUIRED' | translate }}</small>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="city">{{ 'SIGNUP.CITY_LABEL' | translate }}</label>
+          <select id="city" formControlName="city">
+            <option value="" disabled>{{ 'SIGNUP.CITY_PLACEHOLDER' | translate }}</option>
+            <option *ngFor="let city of availableCities" [value]="city">
+              {{ city }}
+            </option>
+          </select>
+          <div *ngIf="city?.invalid && (city?.dirty || city?.touched)" class="error-message">
+              <small *ngIf="city?.errors?.['required']">{{ 'SIGNUP.ERRORS.CITY_REQUIRED' | translate }}</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>{{ 'SIGNUP.PHOTO_LABEL' | translate }}</label>
+        <div class="photo-upload-wrapper">
+            <button type="button" class="photo-upload-button" (click)="fileInput.click()">{{ 'SIGNUP.CHOOSE_FILE_BUTTON' | translate }}</button>
+            <span class="file-name">{{ selectedFileName || ('SIGNUP.NO_FILE_CHOSEN' | translate) }}</span>
+            <input hidden type="file" #fileInput (change)="onFileSelected($event)" accept="image/*">
+        </div>
+        <div *ngIf="photoPreview" class="photo-preview">
+          <img [src]="photoPreview" alt="Photo Preview">
+        </div>
+      </div>
+
+      <button type="submit" class="signup-button" [disabled]="signupForm.invalid">{{ 'SIGNUP.SIGN_UP_BUTTON' | translate }}</button>
+    </form>
+
+    <div class="signin-link">
+      <span>{{ 'SIGNUP.ALREADY_HAVE_ACCOUNT' | translate }} </span>
+      <a (click)="goToLogin()">{{ 'SIGNUP.SIGN_IN_LINK' | translate }}</a>
+    </div>
+  </div>
+</div>

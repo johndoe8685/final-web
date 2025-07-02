@@ -1,0 +1,29 @@
+<div class="login-container">
+      <div class="go-back" (click)="goToHome()">{{ 'LOGIN.GO_BACK' | translate }}</div>
+      <div class="login-card">
+        <h1>{{ 'LOGIN.SIGN_IN_TITLE' | translate }}</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="email">{{ 'LOGIN.EMAIL_LABEL' | translate }}</label>
+            <input type="email" id="email" formControlName="email" [placeholder]="'LOGIN.EMAIL_PLACEHOLDER' | translate" required>
+          </div>
+          <div class="form-group">
+            <label for="password">{{ 'LOGIN.PASSWORD_LABEL' | translate }}</label>
+            <input type="password" id="password" formControlName="password" [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate" required>
+          </div>
+          <button type="submit" class="login-button" [disabled]="isLoading || loginForm.invalid">{{ 'LOGIN.SIGN_IN_BUTTON' | translate }}</button>
+        </form>
+
+        <div class="divider">{{ 'LOGIN.DIVIDER_TEXT' | translate }}</div>
+
+        <button class="google-login-button">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google logo">
+          <span>{{ 'LOGIN.GOOGLE_SIGN_IN' | translate }}</span>
+        </button>
+
+        <div class="signup-link">
+          <span>{{ 'LOGIN.NO_ACCOUNT_PROMPT' | translate }} </span>
+          <a (click)="goToSignup()">{{ 'LOGIN.SIGN_UP_LINK' | translate }}</a>
+        </div>
+      </div>
+</div>

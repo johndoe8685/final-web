@@ -1,0 +1,160 @@
+.header {
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px;
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: #efefef;
+}
+
+.page-content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+}
+
+.page-logo {
+    background-color: #ffcc00;
+    padding: 4px;
+    padding-left: 5px;
+    padding-right: 7px;
+    color: #222;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.search-container {
+    width: 600px;
+    position: relative;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 0px;
+    appearance: none;
+}
+
+.search-bar select {
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    padding: 10px;
+    background-color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.search-bar input {
+    width: 100%;
+    border-radius: 0 4px 4px 0;
+    border-left: none;
+    padding: 10px;
+    outline: none;
+    border: none;
+}
+
+.menu-button {
+    border: none;
+    color: #efefef;
+    text-align: center;
+    display: inline-block;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 20px;
+    font-size: large;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #222;
+    cursor: pointer;
+}
+
+.menu-button:hover {
+    background-color: #333;
+}
+
+.main {
+    background-color: black;
+    color: #efefef;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.slider-content {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #ffcc00;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.movie-slider {
+  position: relative;
+  padding: 20px;
+  max-width: 1280px;
+}
+
+.movie-card-wrapper {
+    flex: 0 0 200px;
+}
+
+.movie-card {
+  background-color: #efefef;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+
+.movie-card:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+
+.movie-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+
+.movie-card-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0 0 0.25rem 0;
+  color: #efefef;
+}
+
+.movie-card-score {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: bold;
+  color: #efefef;
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}

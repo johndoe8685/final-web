@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<div class="watchlist-container">
+  <div class="watchlist-header">
+    <h1>{{ 'WATCHLIST.TITLE' | translate }}</h1>
+  </div>
+
+  <ng-container *ngIf="watchlist$ | async as movies; else loading">
+
+    <div *ngIf="movies.length > 0; else empty" class="movie-grid">
+
+      <div *ngFor="let movie of movies" class="movie-card-wrapper">
+        <div class="movie-card" [routerLink]="['/movie', movie.id]">
+          <img [src]="movie.posterUrl" alt="{{movie.title}} poster">
+          <div class="movie-card-overlay">
+              <h3 class="movie-card-title">{{ movie.title }}</h3>
+              <div class="movie-card-score">
+                <span class="star-icon">★</span>
+                {{ movie.rating }} / 5
+              </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </ng-container>
+
+  <ng-template #empty>
+    <div class="info-section empty-watchlist">
+      <p>{{ 'WATCHLIST.EMPTY_MESSAGE' | translate }}</p>
+      <a routerLink="/" class="browse-button">{{ 'WATCHLIST.BROWSE_MOVIES' | translate }}</a>
+    </div>
+  </ng-template>
+
+  <ng-template #loading>
+    <div class="info-section loading-watchlist">
+      <p>{{ 'WATCHLIST.LOADING' | translate }}...</p>
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,65 @@
+<div class="header">
+    <div class="page-content-container">
+        <div class="page-logo" (click)="goToHome()">IaMDb</div>
+        <div class="search-container">
+            <div class="search-bar">
+                <select [formControl]="searchCategory">
+                    <option value="all">{{ 'HEADER.SEARCH_ALL' | translate }}</option>
+                    <option value="movies">{{ 'HEADER.SEARCH_MOVIES' | translate }}</option>
+                    <option value="celebrities">{{ 'HEADER.SEARCH_CELEBRITIES' | translate }}</option>
+                </select>
+                <input 
+                    [formControl]="searchControl" 
+                    [placeholder]="'HEADER.SEARCH_PLACEHOLDER' | translate"
+                    (input)="search($event)"
+                    autocomplete="off"
+                />
+            </div>
+
+            <div class="search-results-box" *ngIf="searchControl.value && searchControl.value.length >= 3">
+                <div *ngIf="isSearchLoading" class="result-item loading">{{ 'HEADER.SEARCH_LOADING' | translate }}</div>
+                
+                <ng-container *ngIf="searchResults$ | async as results">
+                    <ng-container *ngIf="(searchCategory.value === 'all' || searchCategory.value === 'movies') && results.movies.length > 0">
+                        <h4 class="result-category">{{ 'HEADER.SEARCH_MOVIES' | translate }}</h4>
+                        <div *ngFor="let movie of results.movies" class="result-item" (click)="goToMovieDetail(movie.id)">
+                            <img [src]="movie.posterUrl" alt="poster">
+                            <span>{{ movie.title }}</span>
+                        </div>
+                    </ng-container>
+
+                    <ng-container *ngIf="(searchCategory.value === 'all' || searchCategory.value === 'celebrities') && results.actors.length > 0">
+                        <h4 class="result-category">{{ 'HEADER.SEARCH_CELEBRITIES' | translate }}</h4>
+                        <div *ngFor="let actor of results.actors" class="result-item" (click)="goToActorPage(actor)">
+                            <div class="actor-icon"></div>
+                            <span>{{ actor }}</span>
+                        </div>
+                    </ng-container>
+
+                    <div *ngIf="!isSearchLoading && results.movies.length === 0 && results.actors.length === 0" class="result-item no-results">
+                        {{ 'HEADER.NO_RESULTS_FOUND' | translate }}
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <button 
+            class="menu-button"
+            (click)="goToWatchlist()" 
+            [title]="(isLoggedIn ? ('HEADER.TOOLTIP_GO_TO_WATCHLIST' | translate) : ('HEADER.TOOLTIP_SIGNUP_FOR_WATCHLIST' | translate))">
+            {{ 'HEADER.WATCHLIST' | translate }}
+        </button>
+        <ng-container *ngIf="!isLoggedIn">
+            <button class="menu-button" (click)="goToLogin()">{{ 'HEADER.SIGN_IN' | translate }}</button>
+        </ng-container>
+        <ng-container *ngIf="isLoggedIn">
+            <div class="user-info">
+                <span class="user-email">{{ userEmail }}</span>
+            </div>
+            <button class="sign-out-button" (click)="logout()">{{ 'HEADER.SIGN_OUT' | translate }}</button>
+        </ng-container>
+        <select class="language-selector" (change)="changeLanguage($event)" [value]="translate.currentLang">
+            <option value="en">EN</option>
+            <option value="tr">TR</option>
+        </select>
+    </div>
+</div>

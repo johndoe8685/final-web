@@ -1,0 +1,88 @@
+{
+  "HEADER": {
+    "SEARCH_ALL": "All",
+    "SEARCH_MOVIES": "Movies",
+    "SEARCH_CELEBRITIES": "Celebrities",
+    "SEARCH_PLACEHOLDER": "Search films, series, actors",
+    "WATCHLIST": "Watchlist",
+    "SIGN_IN": "Sign in",
+    "SIGN_OUT": "Sign Out",
+    "TOOLTIP_GO_TO_WATCHLIST": "Go to your Watchlist",
+    "TOOLTIP_SIGNUP_FOR_WATCHLIST": "Sign up to create your Watchlist",
+    "SEARCH_LOADING": "Loading...",
+    "NO_RESULTS_FOUND": "No results found."
+  },
+  "HOME": {
+    "SLIDER_TITLE": "Top 10 IaMDb this week",
+    "MOVIE_CARD_RATING": "Rating"
+  },
+  "LOGIN": {
+    "GO_BACK": "Go Back Home",
+    "SIGN_IN_TITLE": "Sign In",
+    "EMAIL_LABEL": "Email",
+    "EMAIL_PLACEHOLDER": "Enter your email",
+    "PASSWORD_LABEL": "Password",
+    "PASSWORD_PLACEHOLDER": "Enter your password",
+    "SIGN_IN_BUTTON": "Sign In",
+    "DIVIDER_TEXT": "OR",
+    "GOOGLE_SIGN_IN": "Sign in with Google",
+    "NO_ACCOUNT_PROMPT": "Don't have an account?",
+    "SIGN_UP_LINK": "Sign up"
+  },
+  "SIGNUP": {
+    "GO_BACK": "Go Back Home",
+    "CREATE_ACCOUNT_TITLE": "Create an Account",
+    "SUBTITLE": "Join us! Fill out the form to get started.",
+    "EMAIL_LABEL": "Email",
+    "EMAIL_PLACEHOLDER": "Enter your email",
+    "PASSWORD_LABEL": "Password",
+    "PASSWORD_PLACEHOLDER": "Enter your password",
+    "CONFIRM_PASSWORD_LABEL": "Confirm Password",
+    "CONFIRM_PASSWORD_PLACEHOLDER": "Confirm your password",
+    "COUNTRY_LABEL": "Country",
+    "COUNTRY_PLACEHOLDER": "-- Select a Country --",
+    "CITY_LABEL": "City",
+    "CITY_PLACEHOLDER": "-- Select a City --",
+    "PHOTO_LABEL": "Profile Photo (Optional)",
+    "CHOOSE_FILE_BUTTON": "Choose File",
+    "NO_FILE_CHOSEN": "No file chosen",
+    "SIGN_UP_BUTTON": "Sign Up",
+    "ALREADY_HAVE_ACCOUNT": "Already have an account?",
+    "SIGN_IN_LINK": "Sign in",
+    "ERRORS": {
+      "EMAIL_REQUIRED": "Email is required.",
+      "EMAIL_INVALID": "Please enter a valid email address.",
+      "PASSWORD_REQUIRED": "Password is required.",
+      "PASSWORD_PATTERN": "Password must be at least 8 characters, with 1 number and 1 special character.",
+      "CONFIRM_PASSWORD_REQUIRED": "Please confirm your password.",
+      "PASSWORDS_MUST_MATCH": "Passwords do not match.",
+      "COUNTRY_REQUIRED": "Country is required.",
+      "CITY_REQUIRED": "City is required."
+    }
+  },
+  "MOVIE_DETAIL": {
+    "ACTORS_LABEL": "Actors:",
+    "TRAILER_TITLE": "Trailer",
+    "RATING_DETAILS_TITLE": "Rating Details",
+    "DISTRIBUTION_TITLE": "Distribution by Country",
+    "COMMENTS_TITLE": "Comments",
+    "COMMENT_FROM": "from",
+    "LOADING_TEXT": "Loading movie details...",
+    "ADD_TO_WATCHLIST": "Add to Watchlist",
+    "REMOVE_FROM_WATCHLIST": "Remove from Watchlist",
+    "RATING_BOX": {
+      "LABEL": "IaMDb RATING",
+      "SUBTEXT": "Click for details"
+    },
+    "POPULARITY_BOX": {
+      "LABEL": "POPULARITY",
+      "SUBTEXT": "Popularity Score"
+    },
+    "BAR_CHART_TOOLTIP": "{{count}} comments from {{country}}"
+  },
+  "WATCHLIST": {
+    "TITLE": "My Watchlist",
+    "EMPTY_MESSAGE": "Your watchlist is empty. Check out some movies.",
+    "BROWSE_MOVIES": "Browse Movies"
+  }
+}
